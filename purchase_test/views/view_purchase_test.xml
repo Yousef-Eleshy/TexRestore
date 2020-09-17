@@ -1,15 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
 <odoo>
-  <data>
+
     <record id="res_config_settings_view_form" model="ir.ui.view">
         <field name="name">purchase.order.change.view.form.inherit</field>
         <field name="model">purchase.order</field>
         <field name="inherit_id" ref="purchase.purchase_order_form"/>
         <field name="arch" type="xml">
-            <xpath expr="//field[@name='amount_tax']" position="after">
-                <field name="matrial_tax"/>
+            <xpath expr="//field[@name='amount_tax']" position="before">
+                <field name="tax_one" widget="monetary"/>
+                <field name="tax_two" widget="monetary"/>
+                <field name="tax_three" widget="monetary"/>
+                <field name="tax_four" widget="monetary"/>
+                <field name="tax_five" widget="monetary"/>
             </xpath>
 
         </field>
     </record>
-  </data>
+
 </odoo>

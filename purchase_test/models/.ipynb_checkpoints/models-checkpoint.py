@@ -1,18 +1,14 @@
 # -*- coding: utf-8 -*-
 
-# from odoo import models, fields, api
+from odoo import api, fields, models
 
 
-# class purchase_test(models.Model):
-#     _name = 'purchase_test.purchase_test'
-#     _description = 'purchase_test.purchase_test'
+class PurchasetaxChange(models.Model):
+    _inherit = 'purchase.order'
 
-#     name = fields.Char()
-#     value = fields.Integer()
-#     value2 = fields.Float(compute="_value_pc", store=True)
-#     description = fields.Text()
-#
-#     @api.depends('value')
-#     def _value_pc(self):
-#         for record in self:
-#             record.value2 = float(record.value) / 100
+    tax_one = fields.Integer(string=" Tax 1")
+    tax_two = fields.Integer(string=" Tax 2")
+    tax_three = fields.Integer(string=" Tax 3")
+    tax_four = fields.Integer(string=" Tax 4")
+    tax_five = fields.Integer(string=" Tax 5")
+
